@@ -29,3 +29,8 @@ data/*.json
 # Logs
 logs/
 *.log
+
+.env
+.env.local
+.env.*.local
+config.json
