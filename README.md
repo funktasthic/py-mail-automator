@@ -10,8 +10,6 @@ Py-Mail Automator is a high-performance, modular Python service designed for sec
 
 - **Security:** Implements pydantic-settings to manage SMTP credentials via environmental variables (.env), keeping secrets out of the source code.
 
-- **Logging:** Uses Loguru to maintain a detailed audit trail of successful dispatches and granular error reports.
-
 - **Modular Architecture:** Designed with a clear separation of concerns (Config, Models, Services, and Readers) for maximum maintainability.
 
 - **Testing:** Includes a suite of unit tests using Pytest to ensure core logic and data integrity.
@@ -20,15 +18,15 @@ Py-Mail Automator is a high-performance, modular Python service designed for sec
 
 - **Python 3.10+**
 
+- **Poetry**: Dependency manager and packaging.
+
 - **Pandas & Openpyxl:** High-speed spreadsheet processing.
 
 - **Pydantic:** Data validation and settings management.
 
 - **Jinja2:** Professional-grade logic-based templating.
 
-- **Loguru:** Enhanced logging for operational traceability.
-
-- **Pytest:** Robust testing framework.
+- **Pytest:** Testing framework.
 
 ## 📜 Requirements
 
@@ -44,29 +42,18 @@ Py-Mail Automator is a high-performance, modular Python service designed for sec
     cd py-mail-automator
     ```
 
-2. **Set up the virtual environment:**
-    - **Windows:**
+2. **Install Poetry (if not already installed):**
+    Follow the official instructions [Poetry](https://python-poetry.org/docs/#installation).
 
-      ```bash
-      python -m venv venv
-      .\venv\Scripts\activate
-      ```
-
-    - **macOS/Linux:**
-
-      ```bash
-      python3 -m venv venv
-      source venv/bin/activate
-      ```
-
-3. **Install dependencies:**
+3. **Install dependencies and setup environment:**
+    Poetry will automatically create a virtual environment and install all listed dependencies:
 
     ```bash
-    pip install -r requirements.txt
+    poetry install
     ```
 
 4. **Environment Setup:**
-Create a .env file in the root directory:
+Create a `.env` file in the root directory:
 
     ```bash
     EMAIL_USER=your_email@gmail.com
@@ -77,15 +64,18 @@ Create a .env file in the root directory:
 
 ## 📈 Usage
 
-1. **Prepare your data:** on `data/contacts.xlsx` with at least two columns: Name and Email.
+1. **Prepare your data:** on `data/contacts.xlsx`.
 
 2. **Customize your message:** in `template/email_template.html`.
 
 3. **Run the automation:**
+You can run the script directly through Poetry:
 
     ```bash
-    python main.py
+    poetry run python main.py
     ```
+
+*Or activate the virtual environment shell first with `poetry shell` and then run `python main.py`*.
 
 ## Authors
 
