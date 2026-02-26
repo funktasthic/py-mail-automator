@@ -3,10 +3,11 @@ from pydantic import BaseModel, EmailStr, field_validator
 class Contact(BaseModel):
     name: str
     email: EmailStr
+    company: str
     
     @field_validator('name')
     @classmethod
-    def normalize_name(cls, value: str) -> str:    
+    def normalize_name(cls, value: str) -> str:     
         if not value.strip():
             raise ValueError('Name field cannot be empty')
         return value.strip().title()
@@ -15,3 +16,10 @@ class Contact(BaseModel):
     @classmethod
     def lowercase_email(cls, value: str) -> str:
         return value.lower()
+
+    @field_validator('company')
+    @classmethod
+    def validate_company(cls, value: str) -> str:
+        if not value.strip():
+            raise ValueError('Company field cannot be empty')
+        return value.strip()
