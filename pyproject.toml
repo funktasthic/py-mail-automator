@@ -1,0 +1,26 @@
+[project]
+name = "py-mail-automator"
+version = "0.1.0"
+description = "Professional email automation service using Excel, Pydantic, and Jinja2."
+authors = [{ name = "funktasthic", email = "ignacioavendanoramirez@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "pandas (>=3.0.1,<4.0.0)",
+    "openpyxl (>=3.1.5,<4.0.0)",
+    "pydantic (>=2.12.5,<3.0.0)",
+    "pydantic-settings (>=2.13.1,<3.0.0)",
+    "email-validator (>=2.3.0,<3.0.0)",
+    "jinja2 (>=3.1.6,<4.0.0)",
+    "python-dotenv (>=1.2.1,<2.0.0)",
+]
+
+[tool.poetry]
+packages = [{ include = "py_mail_automator", from = "src" }]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = ["pytest (>=9.0.2,<10.0.0)", "pytest-mock (>=3.15.1,<4.0.0)"]
