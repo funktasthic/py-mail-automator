@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div style="background-color: #2c3e50; color: white; padding: 20px;">
+        <h1>{{ header_title }}</h1>
+    </div>
+
+    <div style="padding: 20px;">
+        <p>Dear {{ recipient_name }},</p>
+        <p>{{ main_content }}</p>
+        <p>Best regards,<br><strong>{{ sender_name }}</strong></p>
+    </div>
+
+    <div style="background-color: #f9f9f9; padding: 10px; font-size: 12px;">
+        <p>{{ sender_title }} | {{ sender_location }}</p>
+        <p>Contact: {{ sender_email }}</p>
+    </div>
+</body>
+
+</html>
